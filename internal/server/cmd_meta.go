@@ -146,6 +146,26 @@ var (
 		Cmd:     "HRANDFIELD",
 		CmdType: SingleShard,
 	}
+	lpushCmdMeta = CmdsMeta{
+		Cmd:     "LPUSH",
+		CmdType: SingleShard,
+	}
+	rpushCmdMeta = CmdsMeta{
+		Cmd:     "RPUSH",
+		CmdType: SingleShard,
+	}
+	lpopCmdMeta = CmdsMeta{
+		Cmd:     "LPOP",
+		CmdType: SingleShard,
+	}
+	rpopCmdMeta = CmdsMeta{
+		Cmd:     "RPOP",
+		CmdType: SingleShard,
+	}
+	llenCmdMeta = CmdsMeta{
+		Cmd:     "LLEN",
+		CmdType: SingleShard,
+	}
 
 	// Metadata for multishard commands would go here.
 	// These commands require both breakup and gather logic.
@@ -197,5 +217,11 @@ func init() {
 	WorkerCmdsMeta["HINCRBY"] = hincrbyCmdMeta
 	WorkerCmdsMeta["HINCRBYFLOAT"] = hincrbyfloatCmdMeta
 	WorkerCmdsMeta["HRANDFIELD"] = hrandfieldCmdMeta
+	WorkerCmdsMeta["LPUSH"] = lpushCmdMeta
+	WorkerCmdsMeta["RPUSH"] = rpushCmdMeta
+	WorkerCmdsMeta["LPOP"] = lpopCmdMeta
+	WorkerCmdsMeta["RPOP"] = rpopCmdMeta
+	WorkerCmdsMeta["LLEN"] = llenCmdMeta
+
 	// Additional commands (multishard, custom) can be added here as needed.
 }

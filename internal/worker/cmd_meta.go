@@ -46,6 +46,11 @@ const (
 	CmdSet    = "SET"
 	CmdGet    = "GET"
 	CmdGetSet = "GETSET"
+	CmdLPush  = "LPUSH"
+	CmdRPush  = "RPUSH"
+	CmdLPop   = "LPOP"
+	CmdRPop   = "RPOP"
+	CmdLLEN   = "LLEN"
 )
 
 // Multi-shard commands.
@@ -159,6 +164,21 @@ var CommandsMeta = map[string]CmdMeta{
 		CmdType: SingleShard,
 	},
 	CmdHRandField: {
+		CmdType: SingleShard,
+	},
+	CmdLPush: {
+		CmdType: SingleShard,
+	},
+	CmdRPush: {
+		CmdType: SingleShard,
+	},
+	CmdLPop: {
+		CmdType: SingleShard,
+	},
+	CmdRPop: {
+		CmdType: SingleShard,
+	},
+	CmdLLEN: {
 		CmdType: SingleShard,
 	},
 
