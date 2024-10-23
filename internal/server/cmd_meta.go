@@ -164,6 +164,22 @@ var (
 	}
 	llenCmdMeta = CmdsMeta{
 		Cmd:     "LLEN",
+    CmdType: SingleShard,
+  }
+	bfaddCmdMeta = CmdsMeta{
+		Cmd:     "BF.ADD",
+		CmdType: SingleShard,
+	}
+	bfreserveCmdMeta = CmdsMeta{
+		Cmd:     "BF.RESERVE",
+		CmdType: SingleShard,
+	}
+	bfexistsCmdMeta = CmdsMeta{
+		Cmd:     "BF.EXISTS",
+		CmdType: SingleShard,
+	}
+	bfinfoCmdMeta = CmdsMeta{
+		Cmd:     "BF.INFO",
 		CmdType: SingleShard,
 	}
 
@@ -222,6 +238,9 @@ func init() {
 	WorkerCmdsMeta["LPOP"] = lpopCmdMeta
 	WorkerCmdsMeta["RPOP"] = rpopCmdMeta
 	WorkerCmdsMeta["LLEN"] = llenCmdMeta
-
+	WorkerCmdsMeta["BF.ADD"] = bfaddCmdMeta
+	WorkerCmdsMeta["BF.RESERVE"] = bfreserveCmdMeta
+	WorkerCmdsMeta["BF.EXISTS"] = bfexistsCmdMeta
+	WorkerCmdsMeta["BF.INFO"] = bfinfoCmdMeta
 	// Additional commands (multishard, custom) can be added here as needed.
 }
