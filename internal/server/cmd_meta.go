@@ -164,8 +164,8 @@ var (
 	}
 	llenCmdMeta = CmdsMeta{
 		Cmd:     "LLEN",
-    CmdType: SingleShard,
-  }
+		CmdType: SingleShard,
+	}
 	bfaddCmdMeta = CmdsMeta{
 		Cmd:     "BF.ADD",
 		CmdType: SingleShard,
